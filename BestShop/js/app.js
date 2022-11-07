@@ -5,10 +5,10 @@ function Calculator(form, summary) {
     package: {
       basic: 0,
       professional: 25,
-      premium: 60
+      premium: 60,
     },
     accounting: 35,
-    terminal: 5
+    terminal: 5,
   };
 
   /**
@@ -19,7 +19,7 @@ function Calculator(form, summary) {
     orders: form.querySelector("#orders"),
     package: form.querySelector("#package"),
     accounting: form.querySelector("#accounting"),
-    terminal: form.querySelector("#terminal")
+    terminal: form.querySelector("#terminal"),
   };
 
   /**
@@ -30,10 +30,9 @@ function Calculator(form, summary) {
     items: summary.querySelector("ul").children,
     total: {
       container: summary.querySelector("#total-price"),
-      price: summary.querySelector(".total__price")
-    }
+      price: summary.querySelector(".total__price"),
+    },
   };
-
 
   // Init
   this.addEvents();
@@ -110,7 +109,6 @@ Calculator.prototype.inputEvent = function (e) {
   this.updateTotal();
 };
 
-
 Calculator.prototype.selectEvent = function (e) {
   this.form.package.classList.toggle("open");
 
@@ -139,7 +137,6 @@ Calculator.prototype.checkboxEvent = function (e) {
 
   this.updateTotal();
 };
-
 
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.querySelector(".calc__form");
